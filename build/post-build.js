@@ -49,7 +49,7 @@ readDir(path.join(__dirname, '/../dist/js'))
     console.log(`Replacing hash in the ${mainBundleFile}`);
 
     // replace hash placeholder in our main.js file so the code knows it's current hash
-    const mainFilepath = path.join(__dirname, '../dist/js', mainBundleFile);
+    const mainFilepath = path.join(__dirname, '/../dist/js', mainBundleFile);
     return readFile(mainFilepath, 'utf8')
       .then(mainFileData => {
         const replacedFile = mainFileData.replace('{{POST_BUILD_ENTERS_HASH_HERE}}', mainHash);

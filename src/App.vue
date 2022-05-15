@@ -59,7 +59,7 @@ export default {
     //
   }),
   mounted() {
-    this.initVersionCheck("/dist/version.json");
+    this.initVersionCheck("/version.json");
   },
 };
 </script>
