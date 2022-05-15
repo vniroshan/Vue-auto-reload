@@ -35,9 +35,7 @@
 
     <v-main>
       <div v-if="hashChanged">
-        <v-btn text>
-          <span class="mr-2">Reload</span>
-        </v-btn>
+       <ReloadPage  @reload="reloadApp" />
       </div>
 
       <HelloWorld />
@@ -47,13 +45,15 @@
 
 <script>
 import HelloWorld from "./components/HelloWorld";
+import ReloadPage from "./components/ReloadPage";
 import { refreshPageMixin } from "@/components/mixins/refresh-page.mixin";
 export default {
   name: "App",
 
   components: {
     HelloWorld,
-  },
+    ReloadPage,
+},
   mixins: [refreshPageMixin],
   data: () => ({
     //
