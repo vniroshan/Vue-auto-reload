@@ -33,6 +33,7 @@ export const refreshPageMixin = {
     },
     hasHashChanged(currentHash, newHash) {
       if (!currentHash || currentHash === '{{POST_BUILD_ENTERS_HASH_HERE}}') {
+        this.reloadApp()
         return true;
       }
 
