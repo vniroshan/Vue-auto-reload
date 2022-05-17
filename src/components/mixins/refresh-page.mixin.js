@@ -22,6 +22,9 @@ export const refreshPageMixin = {
         this.newHash = fileResponse.data.hash;
 
         this.hashChanged = this.hasHashChanged(this.currentHash, this.newHash);
+        if(this.hashChanged){
+        this.reloadApp()
+        }
       } catch (error) {
         this.loading = false;
         if (!error.response) {
@@ -33,7 +36,6 @@ export const refreshPageMixin = {
     },
     hasHashChanged(currentHash, newHash) {
       if (!currentHash || currentHash === '{{POST_BUILD_ENTERS_HASH_HERE}}') {
-        this.reloadApp()
         return true;
       }
 
