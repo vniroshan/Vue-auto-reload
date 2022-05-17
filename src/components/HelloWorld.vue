@@ -12,9 +12,13 @@
 
       <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify 47
+          Welcome to Vuetify 48
         </h1>
-
+ <v-text-field
+              color="purple darken-2"
+              label="First name"
+              required
+            ></v-text-field>
         <p class="subheading font-weight-regular">
           For help and collaboration with other Vuetify developers,
           <br>please join our online
