@@ -12,7 +12,7 @@
 
       <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify 07
+          Welcome to Vuetify 08
         </h1>
   <v-text-field
               color="purple darken-2"

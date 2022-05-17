@@ -49,7 +49,7 @@ export const refreshPageMixin = {
     //   setTimeout(()=>{
     //      this.isRouterAlive = true
     //   },0)
-    this.$forceUpdate();
+    this.$router.go(0);
     }
   }
 };
