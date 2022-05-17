@@ -12,9 +12,9 @@
 
       <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify 50
+          Welcome to Vuetify
         </h1>
- <v-text-field
+  <v-text-field
               color="purple darken-2"
               label="First name"
               required

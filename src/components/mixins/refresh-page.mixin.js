@@ -3,6 +3,7 @@ import axios from 'axios';
 export const refreshPageMixin = {
   data() {
     return {
+      isRouterAlive:true,
       currentHash: '{{POST_BUILD_ENTERS_HASH_HERE}}',
      // token: localStorage.getItem('user-token'),
       hashChanged: false,
@@ -43,7 +44,11 @@ export const refreshPageMixin = {
     },
     reloadApp() {
       this.currentHash = this.newHash;
-      window.location.reload();
+     // window.location.reload();
+     this.isRouterAlive = false
+      setTimeout(()=>{
+         this.isRouterAlive = true
+      },0)
     }
   }
 };

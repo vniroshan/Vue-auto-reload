@@ -1,6 +1,10 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
+    <v-app-bar
+      app
+      color="primary"
+      dark
+    >
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
@@ -24,41 +28,29 @@
       <v-spacer></v-spacer>
 
       <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
+        @click="reloadApp"
         text
       >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
+       Reload
       </v-btn>
     </v-app-bar>
 
     <v-main>
-      <div v-if="hashChanged">
-       <ReloadPage  @reload="reloadApp" />
-      </div>
-
-      <HelloWorld />
+    <router-view v-if="isRouterAlive"/>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
-import ReloadPage from "./components/ReloadPage";
 import { refreshPageMixin } from "@/components/mixins/refresh-page.mixin";
 export default {
-  name: "App",
+  name: 'App',
 
-  components: {
-    HelloWorld,
-    ReloadPage,
-},
-  mixins: [refreshPageMixin],
   data: () => ({
     //
   }),
-  mounted() {
+   mixins: [refreshPageMixin],
+   mounted() {
     this.initVersionCheck("/version.json");
   },
 };
