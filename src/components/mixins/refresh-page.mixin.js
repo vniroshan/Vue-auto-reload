@@ -43,6 +43,14 @@ export const refreshPageMixin = {
       return currentHash !== newHash;
     },
     reloadApp() {
+       // new content clear cache so user gets the new version
+       caches.keys().then(cacheNames => {
+        cacheNames.forEach(cacheName => {
+          console.log(cacheName)
+          caches.delete(cacheName);
+        });
+      });
+      console.log("New content is downloading.");
       this.currentHash = this.newHash;
      // window.location.reload();
      this.isRouterAlive = false
