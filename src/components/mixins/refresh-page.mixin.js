@@ -44,12 +44,11 @@ export const refreshPageMixin = {
     },
     reloadApp() {
       this.currentHash = this.newHash;
-     // window.location.reload();
-    //  this.isRouterAlive = false
-    //   setTimeout(()=>{
-    //      this.isRouterAlive = true
-    //   },0)
-    this.$router.go(0);
+    //  window.location.reload();
+     this.isRouterAlive = false
+      setTimeout(()=>{
+         this.isRouterAlive = true
+      },100)
     }
   }
 };
